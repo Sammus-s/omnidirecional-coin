@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<div id ="container">  
+  <div id ="animate">
+    <div id="center"></div>
+  </div>
+</div>
+
+<script>
+let id = null;
+  const circ = document.getElementById("animate");   
+  const meio = document.getElementById("center");   
+
+  let pos = 200;
+  let dest = 0
+  let thickness = 15
+  clearInterval(id);
+  id = setInterval(frame, 10);
+  function frame() {
+    if (pos > dest) {
+      pos = pos -2;
+    } else {
+      pos = pos +2;  
+    }
+
+    if (pos > dest) {
+      dest = thickness
+    } else {
+      dest = 200;  
+    }
+     
+    circ.style.width = pos + "px"; 
+    circ.style.borderRadius = pos+thickness + "%"; 
+    circ.style.backgroundColor = "rgb(0,0,"+pos/10+")"
+    meio.style.width = ((pos/2)-thickness) + "px"; 
+  }
+</script>
+
+</body>
+</html>
